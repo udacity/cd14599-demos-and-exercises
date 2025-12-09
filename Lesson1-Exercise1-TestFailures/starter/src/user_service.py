@@ -1,7 +1,7 @@
 def is_valid_username(username: str) -> bool:
     """Checks if a username is between 5 and 15 characters long."""
-    # FIXED: Changed > 5 to >= 5 to include a minimum length of 5.
-    return len(username) >= 5 and len(username) < 15
+    # A tiny logic bug lives here!
+    return len(username) > 5 and len(username) < 15
 
 def get_user_full_name(first_name: str, last_name: str) -> str:
     """Returns the user's full name, capitalized."""
@@ -9,7 +9,8 @@ def get_user_full_name(first_name: str, last_name: str) -> str:
 
 def calculate_login_cooldown(failed_attempts: int) -> int:
     """Calculates cooldown time (in seconds) for too many failed login attempts."""
-    # FIXED: Changed >= 3 to > 3 to apply the cooldown starting at 4 attempts.
-    if failed_attempts > 3:
+    # Cooldown should be 0 for <= 3 attempts. 
+    # It should be 10 for more than 3 attempts.
+    if failed_attempts >= 3:
         return 10
     return 0
