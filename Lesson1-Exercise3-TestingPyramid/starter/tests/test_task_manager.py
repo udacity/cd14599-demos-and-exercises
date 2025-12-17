@@ -15,7 +15,7 @@ def test_unit_task_manager_can_mark_task_complete(manager):
     
     # Assert: Verify the internal state change
     # TODO: Write the final assertion here. Hint: Check the task's 'completed' property.
-    assert True # Placeholder
+    assert False # Placeholder
 
 # Assume 'test_app' is a fixture that lets you make requests to the API server
 def test_integration_api_creates_task(test_app, manager):
@@ -34,7 +34,7 @@ def test_integration_api_creates_task(test_app, manager):
     
     # Assert 2: Check the persistence/logic integration
     # TODO: Write the assertion to confirm the task now exists in the manager's state.
-    assert True # Placeholder
+    assert False # Placeholder
 
 # Assume 'selenium_driver' is a fixture that opens a browser
 def test_e2e_user_can_create_task_via_ui(selenium_driver):
@@ -54,4 +54,4 @@ def test_e2e_user_can_create_task_via_ui(selenium_driver):
     
     # Assert: Check the final result as a user would see it on the page.
     # TODO: Write the assertion to confirm the task title is visible in the task list element.
-    assert True # Placeholder
+    assert False # Placeholder
