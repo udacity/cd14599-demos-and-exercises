@@ -1,5 +1,5 @@
 import pytest
-#Optional: We use a mock 'By' class here (defined in conftest.py) so you don't need Selenium installed.
+# We use a mock 'By' class here (defined in conftest.py) so you don't need Selenium installed.
 from tests.conftest import By 
 
 def test_unit_task_manager_can_mark_task_complete(manager):
