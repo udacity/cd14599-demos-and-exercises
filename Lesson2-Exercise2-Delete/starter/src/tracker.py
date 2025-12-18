@@ -29,7 +29,7 @@ class ExpenseTracker:
         expense = self.get_expense(expense_id)
         if expense:
             if new_amount is not None:
-                expense["amount"] = amount
+                expense["amount"] = new_amount
             if new_category is not None:
                 expense["category"] = new_category
 

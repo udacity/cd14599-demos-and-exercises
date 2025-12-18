@@ -55,7 +55,7 @@ def test_edit_expense(tracker):
     edited_expense = tracker.get_expense(expense_id)
     # Assert
     assert tracker.total == 12.50
-    assert edit_expense["category"] == "dining"
+    assert edited_expense["category"] == "dining"
 
 def test_delete_expense(tracker):    
     # Arrange: Add an expense to delete
