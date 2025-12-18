@@ -10,6 +10,8 @@ class ExpenseTracker:
 
     # ------------- Create -------------
     def add_expense(self, amount, category=None):
+        if amount <= 0:
+            raise ValueError("Expense amount must be positive.")
         expense_id = str(uuid.uuid4())
         expense = {"id": expense_id, "amount": amount, "category": category}
         self.expenses.append(expense)
@@ -21,6 +23,15 @@ class ExpenseTracker:
 
     def get_expense(self, expense_id):
         return next((e for e in self.expenses if e["id"] == expense_id), None)
+
+    # ------------- Update -------------
+    def edit_expense(self, expense_id, new_amount=None, new_category=None):
+        expense = self.get_expense(expense_id)
+        if expense:
+            if new_amount is not None:
+                expense["amount"] = amount
+            if new_category is not None:
+                expense["category"] = new_category
 
     # ------------- Delete -------------
     def delete_expense(self, expense_id):
