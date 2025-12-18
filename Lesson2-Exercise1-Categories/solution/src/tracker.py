@@ -9,3 +9,7 @@ class ExpenseTracker:
             "category": category
         }
         self.expenses.append(expense)
+
+    def list_expenses_by_category(self, category):
+        # Loop over the expenses and return expenses with the appropriate category
+        return [e for e in self.expenses if e.get("category") == category]
