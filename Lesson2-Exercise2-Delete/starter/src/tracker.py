@@ -1,21 +1,26 @@
+import uuid
+
 class ExpenseTracker:
     def __init__(self):
         self.expenses = []
-        self.total = 0
-        self._next_id = 1
 
-    def add_expense(self, amount, category):
-        expense_id = self._next_id
-        expense = {
-            "id": expense_id,
-            "amount": amount, 
-            "category": category
-        }
+    @property
+    def total(self):
+        return sum([e["amount"] for e in self.expenses])
+
+    # ------------- Create -------------
+    def add_expense(self, amount, category=None):
+        expense_id = str(uuid.uuid4())
+        expense = {"id": expense_id, "amount": amount, "category": category}
         self.expenses.append(expense)
-        self.total += amount
-        self._next_id += 1
         return expense_id
 
+    # ------------- Read -------------
+    def list_expenses_by_category(self, category):
+        return [e for e in self.expenses if e.get("category") == category]
+
     def get_expense(self, expense_id):
-        # Helper to find a specific expense by ID
         return next((e for e in self.expenses if e["id"] == expense_id), None)
+
+
+    # ------------- Delete -------------
