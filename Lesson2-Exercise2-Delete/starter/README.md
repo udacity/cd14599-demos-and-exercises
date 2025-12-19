@@ -4,7 +4,7 @@
 
 Complete the TDD cycle to implement a `delete_expense` method.
 
-Our expense tracker has Create and Read functionality, now let's add Delete!
+Our expense tracker has Create, Read, and Update functionality, now let's add Delete!
 
 Files to work with:
 
